@@ -4,8 +4,10 @@ from DexkOfCards import DeckOfCards
 
 class CardGame:
     def __init__(self, player1_name, player2_name, num_cards:int):
-        self.player1 = Player(player1_name, num_cards)
-        self.player2 = Player(player2_name, num_cards)
+        if type(num_cards) != int:
+            raise TypeError("num_cards must be int")
+        self.player1 = Player(str(player1_name), num_cards)
+        self.player2 = Player(str(player2_name), num_cards)
         self.new_game(self.player1, self.player2)
 
     def new_game(self, player1:Player, player2:Player):
