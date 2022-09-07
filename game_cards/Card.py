@@ -1,9 +1,13 @@
 class Card:
-    def __init__(self, value:int, sign):
-        if type(value)!= int:
+    def __init__(self, value:int, sign:int):
+        if type(value) != int:
             raise TypeError("value nust be int")
         if value < 1 or value > 13:
             raise ValueError("value nust be 1 - 13")
+        if type(sign) != int:
+            raise TypeError("value nust be int")
+        if sign > 4 or sign < 1:
+            raise ValueError("sign nust be 1 - 4")
         self.value = value
         self.sign = sign
 
