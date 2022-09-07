@@ -12,33 +12,43 @@ for i in range(10):
     p1_card = our_game.player1.get_card()
     p2_card = our_game.player2.get_card()
     if p1_card > p2_card:
+        count_p1_winning += 1
+
+        befor_print1 = Convert(p1_card)
+        befor_print2 = Convert(p2_card)
+
+        print(our_game.player2.name, p2_card)
+        print(our_game.player1.name, p1_card)
+
+
         our_game.player1.add_card(p1_card)
         our_game.player1.add_card(p2_card)
-        count_p1_winning += 1
-        sign1 = Convert(p1_card)
-        sign2 = Convert(p2_card)
 
-        print(our_game.player2.name, p2_card)
-        print(our_game.player1.name, p1_card)
         print("this round winner:",our_game.player1)
     elif p2_card > p1_card:
+        count_p2_winning += 1
+
+        befor_print1 = Convert(p1_card)
+        befor_print2 = Convert(p2_card)
+
+        print(our_game.player2.name, p2_card)
+        print(our_game.player1.name, p1_card)
+
         our_game.player2.add_card(p1_card)
         our_game.player2.add_card(p2_card)
-        count_p2_winning += 1
-        sign1 = Convert(p1_card)
-        sign2 = Convert(p2_card)
 
-        print(our_game.player2.name, p2_card)
-        print(our_game.player1.name, p1_card)
         print("this round winner:",our_game.player2)
     else:
-        our_game.player1.add_card(p1_card)
-        our_game.player2.add_card(p2_card)
-        sign1 = Convert(p1_card)
-        sign2 = Convert(p2_card)
+
+        befor_print1 = Convert(p1_card)
+        befor_print2 = Convert(p2_card)
 
         print(our_game.player2.name, p2_card)
         print(our_game.player1.name, p1_card)
+
+        our_game.player1.add_card(p1_card)
+        our_game.player2.add_card(p2_card)
+
         print("no one win this round")
 
 if count_p2_winning > count_p1_winning:

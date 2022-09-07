@@ -1,7 +1,9 @@
 class Card:
     def __init__(self, value:int, sign):
         if type(value)!= int:
-            raise ValueError("value nust be int")
+            raise TypeError("value nust be int")
+        if value < 1 or value > 13:
+            raise ValueError("value nust be 1 - 13")
         self.value = value
         self.sign = sign
 
@@ -10,6 +12,38 @@ class Card:
         return f"{self.value},{self.sign}"
 
     def __gt__(self, other):
+        if self.sign == "DIAMOND":
+            self.sign = 1
+        elif self.sign == "SPADE":
+            self.sign = 2
+        elif self.sign == "HEART":
+            self.sign = 3
+        elif self.sign == "CLUB":
+            self.sign = 4
+        if other.sign == "DIAMOND":
+            other.sign = 1
+        elif other.sign == "SPADE":
+            other.sign = 2
+        elif other.sign == "HEART":
+            other.sign = 3
+        elif other.sign == "CLUB":
+            other.sign = 4
+        if self.value == "Jack":
+            self.value = 11
+        elif self.value == "Queen":
+            self.value = 12
+        elif self.value == "King":
+            self.value = 13
+        elif self.value == "Ace":
+            self.value = 14
+        if other.value == "Jack":
+            other.value = 11
+        elif other.value == "Queen":
+            other.value = 12
+        elif other.value == "King":
+            other.value = 13
+        elif other.value == "Ace":
+            other.value = 14
         if self.value > other.value:
             return True
         elif self.value < other.value:

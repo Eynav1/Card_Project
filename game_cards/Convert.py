@@ -4,8 +4,12 @@ from Card import Card
 class Convert:
     def __init__(self,card:Card):
         self.card = card
-        self.numbers_to_sign(self.card)
-        self.numbers_to_value(self.card)
+        if type(card.value) == int:
+            self.numbers_to_value(self.card)
+        if type(card.sign)== int:
+            self.numbers_to_sign(self.card)
+
+
     def numbers_to_sign(self,card):
         if card.sign == 1:
             card.sign = "DIAMOND"
@@ -15,6 +19,7 @@ class Convert:
             card.sign = "HEART"
         elif card.sign == 4:
             card.sign = "CLUB"
+
 
     def numbers_to_value(self,card):
         if card.value == 11:
