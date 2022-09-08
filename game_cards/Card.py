@@ -12,8 +12,29 @@ class Card:
         self.value = value
         self.sign = sign
 
-
+    def change_for_print(self):
+        if self.sign == 1:
+            self.sign = "DIAMOND"
+        elif self.sign == 2:
+            self.sign = "SPADE"
+        elif self.sign == 3:
+            self.sign = "HEART"
+        elif self.sign == 4:
+            self.sign = "CLUB"
+        if self.value == 11:
+            self.value = "Jack"
+        elif self.value == 12:
+            self.value = "Queen"
+        elif self.value == 13:
+            self.value = "King"
+        elif self.value == 14:
+            self.value = "Ace"
     def __str__(self):
+        self.change_for_print()
+        return f"{self.value},{self.sign}"
+
+    def __repr__(self):
+        self.change_for_print()
         return f"{self.value},{self.sign}"
 
     def __gt__(self, other):
