@@ -3,6 +3,7 @@ from Card import Card
 
 class Convert:
     def __init__(self,card:Card):
+        """מקבל קלף עם ערך וסמל מספריים"""
         self.card = card
         if type(card.value) == int:
             self.numbers_to_value(self.card)
@@ -10,7 +11,8 @@ class Convert:
             self.numbers_to_sign(self.card)
 
 
-    def numbers_to_sign(self,card):
+    def numbers_to_sign(self, card):
+        """הופך את סמל הקלף ממספר לשם הסמל לפי ההגדרה"""
         if card.sign == 1:
             card.sign = "DIAMOND"
         elif card.sign == 2:
@@ -22,6 +24,7 @@ class Convert:
 
 
     def numbers_to_value(self,card):
+        """הופך את ערך הקלף ממספר לשם הקלף"""
         if card.value == 11:
             card.value = "Jack"
         elif card.value == 12:

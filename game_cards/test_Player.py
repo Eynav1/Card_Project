@@ -1,4 +1,4 @@
-from unittest import TestCase
+from unittest import TestCase,mock
 from Player import Player
 from DexkOfCards import DeckOfCards
 from Card import Card
@@ -28,6 +28,13 @@ class TestPlayer(TestCase):
         self.assertTrue(player_invalid2.num_of_cards, 26)
         self.assertTrue(player_invalid3.num_of_cards, 26)
         self.assertTrue(player_invalid4.num_of_cards, 26)
+
+
+
+    @mock.patch("DexkOfCards.DeckOfCards.del_one", return_value=(2, 2))
+    def test_set_hand_1(self, del_mock):
+        self.player_valid2.set_hand(self.big_deck)
+        self.assertTrue(self.player_valid2.playerDeck.count((2,2)),10)
 
 
     def test_set_hand(self):

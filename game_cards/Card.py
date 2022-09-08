@@ -1,5 +1,6 @@
 class Card:
     def __init__(self, value:int, sign:int):
+        """מקבל 2 משתנים מספריים שנותנים ערך וסמל לקלף ובודק שהערך בין 1-13 והסמל בין 1-4"""
         if type(value) != int:
             raise TypeError("value nust be int")
         if value < 1 or value > 13:
@@ -16,6 +17,7 @@ class Card:
         return f"{self.value},{self.sign}"
 
     def __gt__(self, other):
+        """עוזר בהשוואה בין קלף נוכחי לקלף שהוא מקבל"""
         if self.sign == "DIAMOND":
             self.sign = 1
         elif self.sign == "SPADE":
@@ -59,6 +61,7 @@ class Card:
                 return False
 
     def __eq__(self, other):
+        """מחזיר משתנה בוליאני אם גם הסמל וגם הערך שווים"""
         if self.value == other.value and self.sign == other.sign:
             return True
         else:
