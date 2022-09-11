@@ -4,12 +4,11 @@ from Card import Card
 
 class TestCard(TestCase):
     def setUp(self):
-        # valid ace diamond (1, 1)
         self.ace_D = Card(1,1)
         self.king_C = Card(13,4)
 
     # valid ace test (1,1)
-    # valid  king test (1,1)
+    # valid  king test (13,4)
     #  ולידי איניט מקבלת ערכי קצה
     def test_init_valid(self):
         self.assertEqual(self.ace_D.value, 1)

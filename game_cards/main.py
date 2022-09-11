@@ -19,12 +19,13 @@ def print_thrown_cards():
     print(our_game.player1.name, p1_card)
 
 
-def collect_to_winner(first_player:Player, second_player:Player):
+def collect_to_winner(first_player: Player, second_player: Player):
     """אוסף את הקלפים למנצח"""
     first_player.add_card(p1_card)
     second_player.add_card(p2_card)
 
-our_game = CardGame(name1,name2,num_of)
+
+our_game = CardGame(name1, name2, num_of)
 print(name1, our_game.player1.playerDeck)
 print(name2, our_game.player2.playerDeck)
 count_p1_winning = 0
@@ -36,20 +37,20 @@ for i in range(10):
         count_p1_winning += 1
         # convert_before_print()
         print_thrown_cards()
-        collect_to_winner(our_game.player1,our_game.player1)
+        collect_to_winner(our_game.player1, our_game.player1)
 
-        print("this round winner: ",our_game.player1)
+        print("this round winner: ", our_game.player1)
     elif p2_card > p1_card:
         count_p2_winning += 1
         # convert_before_print()
         print_thrown_cards()
-        collect_to_winner(our_game.player2,our_game.player2)
+        collect_to_winner(our_game.player2, our_game.player2)
 
-        print("this round winner: ",our_game.player2)
+        print("this round winner: ", our_game.player2)
     else:
         # convert_before_print()
         print_thrown_cards()
-        collect_to_winner(our_game.player1,our_game.player2)
+        collect_to_winner(our_game.player1, our_game.player2)
 
         print("no one win this round")
 

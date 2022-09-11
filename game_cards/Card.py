@@ -1,5 +1,5 @@
 class Card:
-    def __init__(self, value:int, sign:int):
+    def __init__(self, value: int, sign: int):
         """מקבל 2 משתנים מספריים שנותנים ערך וסמל לקלף ובודק שהערך בין 1-13 והסמל בין 1-4"""
         if type(value) != int:
             raise TypeError("value nust be int")
@@ -13,6 +13,7 @@ class Card:
         self.sign = sign
 
     def change_for_print(self):
+        """המרות של מספרי הערכים והסמלים לשמותיהן של הקלפים"""
         if self.sign == 1:
             self.sign = "DIAMOND"
         elif self.sign == 2:
@@ -29,9 +30,10 @@ class Card:
             self.value = "King"
         elif self.value == 14:
             self.value = "Ace"
-    def __str__(self):
-        self.change_for_print()
-        return f"{self.value},{self.sign}"
+
+    # def __str__(self):
+    #     self.change_for_print()
+    #     return f"{self.value},{self.sign}"
 
     def __repr__(self):
         self.change_for_print()
